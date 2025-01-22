@@ -1,0 +1,13 @@
+# Ignore all node_modules directories in any subfolder
+**/node_modules/
+
+# Ignore logs
+**/logs/
+*.log
+npm-debug.log*
+
+# Ignore build artifacts (e.g., React's build folder)
+frontend/build/
+
+# Optional: Ignore environment files
+**/.env
