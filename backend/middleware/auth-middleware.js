@@ -10,13 +10,12 @@ const authMiddleware = async(req,res,next)=>{
 
     if(!token) return res.status(401).json({
         success: false,
-        message: 'Access Denied'
+        message: 'Please login'
     })
 
 
     try {
         const decodeTokenInfo = jwt.verify(token, process.env.JWT_SECRET)
-        console.log(decodeTokenInfo)
         req.userInfo = decodeTokenInfo
         next()
 

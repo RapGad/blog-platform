@@ -1,11 +1,15 @@
+const { json } = require('express')
 const uploadImage = require('../helper/upload-image')
 const Post = require('../models/blogpost')
 const Comments = require('../models/comment')
+const Likes = require('../models/like')
 
 
 const createPost = async(req,res)=>{
     try {
         const { title, content } = req.body
+
+        console.log(req.file)
 
         if(!req.file){
             const post = new Post({
@@ -13,7 +17,6 @@ const createPost = async(req,res)=>{
                 content,
                 author: req.userInfo.id
             })
-           console.log(req.userInfo.id)
     
            await post.save()
            if(post) return res.status(201).json({
@@ -116,5 +119,56 @@ const commentOnPost = async(req,res)=>{
 }
 
 
+const likePost = async(req,res)=>{
 
-module.exports = {createPost, getPost,commentOnPost}
+
+    try {
+        const { isLike } = req.body
+    const postId = req.params.id
+    const userId = req.userInfo.id
+
+    const post = await Post.findById(postId)
+
+    if(!post) return res.status(404).json({
+        success: false,
+        message: "Post not found"
+    })
+
+    const like = await Likes.find({postId,userId})
+
+    if(like){
+        like.isLike = !like.isLike
+        return res.status(200).json({
+            success: true,
+            message: "like updated"
+        })
+    }
+
+    const newLike = new Likes({
+        postId,
+        userId,
+        isLike
+    })
+    await newLike.save()
+
+    res.status(201).json({
+        success: true,
+        message: "Post is liked",
+        data: newLike
+    })
+        
+    } catch (error) {
+        console.log(error)
+        return res.status(500).json({
+            message: "internal error"
+        })
+        
+    }
+    
+
+    
+}
+
+
+
+module.exports = {createPost, getPost,commentOnPost,likePost}
