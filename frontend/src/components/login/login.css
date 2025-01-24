@@ -1,0 +1,174 @@
+.login-container{
+    min-height: 100vh;
+    width: 100%;
+    border: 1px solid black;
+    background-image: url('/Users/macbook/Desktop/studies/projects/full_blog/frontend/public/img/jess-bailey-q10VITrVYUM-unsplash.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+   
+}
+
+.login-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 1;
+  }
+  .login-container * {
+    position: relative;
+    z-index: 2; /* Ensures content appears above the overlay */
+  }
+
+.page-container{
+    max-width: 1200px;
+    background: linear-gradient(135deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7rem;
+    display: flex;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+
+}
+.page-container img{
+    width: 80px;
+    height: 80px;
+
+}
+
+.form-container {
+    margin-left: 5rem;
+    margin-top: 3rem;
+    color: white;
+    width: 35%;
+    padding: 1rem;
+   
+}
+
+.form-container .form{
+    padding: 2rem;
+    width: 100%;
+
+}
+
+.form-container .login-para{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control{
+    display: flex;
+    flex-direction: column;
+}
+.control-password{
+    margin-left: 210px;
+}
+
+.control label{
+    margin-bottom: 1.5rem;
+}
+
+.control input{
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1rem;
+    max-width: 350px;
+    border: 1px solid white;
+    outline: none;
+    color: white;
+    background-color: transparent;
+}
+
+
+.textContainer{
+    width: 40%;
+    padding: 2rem;
+    color: white;
+    background: linear-gradient(135deg,rgba(46, 65, 86, .5), rgba(46, 65, 86, 1)); /* Slightly transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border-top-right-radius: 50px;
+
+}
+.fg-password{
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+}
+
+.textContainer span{
+    font-size: 40px;
+
+}
+
+.textContainer h1{
+    margin-top: 2rem;
+
+}
+
+.end{
+    display: block;
+    width: 100%;
+    text-align: end;
+    margin-top: 2rem;
+}
+
+.lg-btn{
+    width: 300px;
+}
+
+.login-button{
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    margin-top: 1.5rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(46, 65, 86, 0.5);
+}
+
+@media (max-width: 768px) {
+    .page-container{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: .3rem;
+        width: 100%;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .form-container {
+        margin-left: 0rem;
+        margin-top: 0rem;
+        color: white;
+        width: 100%;
+        padding: 1rem;
+       
+    }
+    .form-container .form{
+        padding: 1rem;
+    }
+    .page-container img{
+        display: none;
+    }
+    .textContainer{
+        display: none;
+
+    }
+    .textContainer span{
+        font-size: 30px;
+    
+    }
+}
