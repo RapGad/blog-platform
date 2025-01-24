@@ -1,0 +1,44 @@
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
+      <Navbar
+        expanded={expanded}
+        expand="lg"
+        bg="dark"
+        variant="dark"
+        onToggle={() => setExpanded(!expanded)}
+        className="mb-4"
+      >
+        <Container>
+          {/* Logo */}
+          <Navbar.Brand href="#home">
+            <motion.img
+              src="https://via.placeholder.com/150" // Replace with your logo URL
+              alt="Logo"
+              width="50"
+              height="50"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.5 }}
+            />
+          </Navbar.Brand>
+
+          {/* Navbar Toggle for smaller screens */}
+          <Navbar.Toggle aria-controls="navbar-nav" />
+
+          {/* Navbar Links */}
+          <Navbar.Collapse id="navbar-nav">
+            <Nav className="ms-auto">
+              <Nav.Link href="#home">Home</Nav.Link>
+              <Nav.Link href="#about">About</Nav.Link>
+              <Nav.Link href="#services">Services</Nav.Link>
+              <Nav.Link href="#services">Login</Nav.Link>
+              <Nav.Link href="#services">Sign Up</Nav.Link>
+              <Nav.Link href="#services">User</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </motion.nav>
