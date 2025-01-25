@@ -26,6 +26,7 @@
   }
 
 .page-container{
+    width: 100%;
     max-width: 1200px;
     background: linear-gradient(135deg,rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2)); /* Slightly transparent white */
     backdrop-filter: blur(10px); /* Frosted glass effect */
@@ -70,7 +71,8 @@
     flex-direction: column;
 }
 .control-password{
-    margin-left: 210px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .control label{
@@ -144,10 +146,11 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: .3rem;
-        width: 100%;
+        padding: 0;
         margin-left: 1rem;
         margin-right: 1rem;
+        overflow: hidden;
+
     }
     .form-container {
         margin-left: 0rem;

@@ -5,6 +5,8 @@ import Login from './components/login/Login.jsx';
 import SignUp from './components/SignUp.jsx';
 import ForgetPassword from './components/ForgetPassword.jsx';
 import Homepage from './components/homepage/Homepage.jsx';
+import SingleBlog from './components/single-blog/SingleBlog.jsx';
+import CreatePost from './components/create-post/CreatePost.jsx';
 import { BrowserRouter as Router, Routes,Route }  from 'react-router-dom'
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgetpassword" element={<ForgetPassword />} />
+          <Route path="/blog/:id" element={<SingleBlog />} />
+          <Route path='/createpost' element={<CreatePost />} />
         </Routes>
       </Router>
       

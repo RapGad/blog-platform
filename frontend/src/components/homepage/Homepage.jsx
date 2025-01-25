@@ -1,6 +1,7 @@
 import React from "react";
 import "./homepage.css";
 import BlogCard from "../card/BlogCard";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Homepage = () => {
@@ -41,7 +42,12 @@ const Homepage = () => {
       </motion.div>
       <h1 className="post-header">Post</h1>
       <motion.div className="blogPosts">
+        <NavLink to="/blog/:id">
         <BlogCard />
+
+        </NavLink>
+        
+
         <BlogCard />
         <BlogCard />
         <BlogCard />

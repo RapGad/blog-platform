@@ -58,7 +58,9 @@ const Login = () => {
               <input type="text" />
             </motion.div>
 
-            <motion.div variants={childVariants} className="control control-password">
+            <motion.div variants={childVariants} className="control-password">
+            <NavLink className='fg-password' to="/signup">Register</NavLink>
+
               <NavLink className='fg-password' to="/forgetpassword">Forget Password</NavLink>
             </motion.div>
             <motion.div variants={childVariants} className="lg-btn">
